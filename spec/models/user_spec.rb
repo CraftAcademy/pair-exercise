@@ -27,7 +27,8 @@ RSpec.describe User, type: :model do
   end
 
   describe 'Validation' do
-    it { is_expected.to validate_presence_of :name }
+    it { is_expected.to validate_presence_of :first_name }
+    it { is_expected.to validate_presence_of :last_name }
     it { is_expected.to validate_presence_of :email }
     it { is_expected.to validate_uniqueness_of(:email).case_insensitive }
     it { is_expected.to allow_value('a@a.com', 'a@1b.net').for(:email) }
