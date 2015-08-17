@@ -36,6 +36,10 @@ RSpec.describe User, type: :model do
   end
 
   context 'instance methods' do
+    let(:user) { User.create(first_name: 'Thomas', last_name: 'Ochman', email: 'thomas@test.com', password: 'password')}
     it { is_expected.to respond_to :name }
+    it 'returns nama as a combination of first and last' do
+      expect(user.name).to eq 'Thomas Ochman'
+    end
   end
 end
