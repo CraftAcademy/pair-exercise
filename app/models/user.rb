@@ -7,5 +7,8 @@ class User < ActiveRecord::Base
   validates_presence_of :first_name
   validates_presence_of :last_name
 
-  attr_accessor :name
+  # attr_accessor :name
+    def name
+      [self.first_name, self.last_name].join(" ")
+    end
 end
